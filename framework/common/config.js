@@ -27,7 +27,11 @@ function withFrameworkConfig(defaultConfig = {}) {
     framework = FALLBACK_FW
   }
 
-  const frameworkNextConfig = path.join('../', framework, 'next.config')
+  const frameworkNextConfig = require(path.join(
+    '../',
+    framework,
+    'next.config'
+  ))
   const config = merge(defaultConfig, frameworkNextConfig)
 
   const tsPath = path.join(process.cwd(), 'tsconfig.json')

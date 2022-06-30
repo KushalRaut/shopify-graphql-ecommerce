@@ -1,6 +1,10 @@
 const { withFrameworkConfig } = require('./framework/common/config')
 
 module.exports = withFrameworkConfig({
+  images: {
+    domains: ['assets.vercel.com'],
+    formats: ['image/avif', 'image/webp'],
+  },
   framework: {
     name: 'shopify_local',
   },

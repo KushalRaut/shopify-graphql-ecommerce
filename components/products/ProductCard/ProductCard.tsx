@@ -7,7 +7,7 @@ interface Props {
   product: Product
 }
 
-const placeHolderImage = '/img/product-image-placeholder.svg'
+const placeHolderImage = '/images/product-image-placeholder.svg'
 
 const ProductCard: React.FunctionComponent<Props> = ({ product }) => {
   return (
@@ -20,13 +20,10 @@ const ProductCard: React.FunctionComponent<Props> = ({ product }) => {
           <span>14 $</span>
         </div>
         {product.images && (
-          <Image
+          <img
+            className="w-full"
             alt={product.name ?? 'Product image'}
-            src={placeHolderImage}
-            height={540}
-            width={540}
-            quality="85"
-            layout="responsive"
+            src={product.images[0].url ?? placeHolderImage}
           />
         )}
       </a>

@@ -1,0 +1,29 @@
+.root {
+  @apply grid;
+
+  @screen lg {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  & > * {
+    @apply row-span-1 overflow-hidden;
+    height: 500px;
+    max-height: 800px;
+
+    @screen lg {
+      height: inherit;
+    }
+  }
+}
+
+.layoutA {
+  & > *:nth-child(6n + 1),
+  & > *:nth-child(6n + 5) {
+    @apply lg:col-span-2 lg:row-span-2;
+  }
+}
+
+.layoutB {
+  color: blue;
+}
